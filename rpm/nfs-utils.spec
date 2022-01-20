@@ -16,6 +16,7 @@ License:    GPLv2
 URL:        http://linux-nfs.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  nfs-utils.yaml
+Patch0:     systemd-Makefile.am.patch
 Requires:   rpcbind
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -61,9 +62,20 @@ Requires:   %{name} = %{version}-%{release}
 %description devel
 %{summary}.
 
+# >> macros2
+# 4.x has a macro defined, 3.4 uses /usr/lib/systemd, lower uses /lib/systemd
+%if %{sailfishos_version} <= 30400
+%if %{undefined _systemdgeneratordir}
+%define _systemdgeneratordir %{_unitdir}/../system-generators
+%endif
+%endif
+# << macros2
+
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
+# systemd-Makefile.am.patch
+%patch0 -p1
 # >> setup
 # << setup
 
