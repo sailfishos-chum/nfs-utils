@@ -9,7 +9,7 @@ Name:       nfs-utils
 # << macros
 
 Summary:    NFS client and server daemons
-Version:    2.5.4
+Version:    2.5.5_rc5
 Release:    1
 Group:      System
 License:    GPLv2
@@ -56,7 +56,7 @@ Requires:   %{name} = %{version}-%{release}
 
 %package devel
 Summary:    Developmemt files for %{name}
-Group:      System
+Group:      Development/System
 Requires:   %{name} = %{version}-%{release}
 
 %description devel

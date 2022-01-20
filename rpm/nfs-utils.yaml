@@ -1,6 +1,6 @@
 Name: nfs-utils
 Summary: NFS client and server daemons
-Version: 2.5.4
+Version: 2.5.5_rc5
 Group: System
 License: GPLv2
 Sources:
@@ -70,7 +70,7 @@ SubPackages:
 #    Files:
   - Name:  devel
     Summary: Developmemt files for %{name}
-    Group: System
+    Group: Development/System
     Files:
       - '%{_includedir}/*'
       - '%{_libdir}/*.so'
