@@ -25,16 +25,23 @@ BuildRequires:  pkgconfig(libevent_core)
 BuildRequires:  pkgconfig(libkeyutils)
 BuildRequires:  pkgconfig(libtirpc)
 BuildRequires:  pkgconfig(systemd)
+BuildRequires:  autoconf
+BuildRequires:  automake
+BuildRequires:  libtool
 
 %description
+%{summary}.
 
 %if "%{?vendor}" == "chum"
 PackageName: NFS Utils
-PackagerName: nephros
 Categories:
  - Network
  - Filesystem
- - System
+Custom:
+  PackagingRepo: https://github.com/sailfishos-chum/nfs-utils
+Url:
+  Help: https://wiki.linux-nfs.org/wiki/index.php/Nfsv4_configuration
+  Bugtracker: https://bugzilla.linux-nfs.org
 %endif
 
 
@@ -55,13 +62,14 @@ Requires:   %{name} = %{version}-%{release}
 %{summary}.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}/upstream
 
 # >> setup
 # << setup
 
 %build
 # >> build pre
+./autogen.sh
 # << build pre
 
 %configure --disable-static \

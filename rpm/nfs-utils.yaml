@@ -6,17 +6,22 @@ License: GPLv2
 Sources:
     - '%{name}-%{version}.tar.bz2'
 URL: http://linux-nfs.org/
+SCM: http://git.linux-nfs.org/projects/steved/nfs-utils.git
 Description: |
+    %{summary}.
 
     %if "%{?vendor}" == "chum"
     PackageName: NFS Utils
-    PackagerName: nephros
     Categories:
      - Network
      - Filesystem
-     - System
+    Custom:
+      PackagingRepo: https://github.com/sailfishos-chum/nfs-utils
+    Url:
+      Help: https://wiki.linux-nfs.org/wiki/index.php/Nfsv4_configuration
+      Bugtracker: https://bugzilla.linux-nfs.org
     %endif
-
+SetupOptions: -q -n %{name}-%{version}/upstream
 ConfigOptions:
   - '--with-gnu-ld'
   - '--disable-gss'
@@ -27,9 +32,11 @@ ConfigOptions:
   - '--with-systemd=%{_unitdir}'
 
 Requires:
-  - 'rpcbind'
-#PkgBR:
-#    - 
+  - rpcbind
+PkgBR:
+  - autoconf
+  - automake
+  - libtool
 PkgConfigBR:
   - blkid
   - devmapper
