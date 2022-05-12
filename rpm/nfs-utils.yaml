@@ -1,6 +1,6 @@
 Name: nfs-utils
 Summary: NFS client and server daemons
-Version: 2.5.4
+Version: 2.6.1
 Group: System
 License: GPLv2
 Sources:
@@ -21,9 +21,9 @@ Description: |
       Help: https://wiki.linux-nfs.org/wiki/index.php/Nfsv4_configuration
       Bugtracker: https://bugzilla.linux-nfs.org
     %endif
-Patches:
-  # from 2.5.5_rcX: do not hardcode systemd paths:
-  - systemd-Makefile.am.patch
+#Patches:
+#  # from 2.5.5_rcX: do not hardcode systemd paths:
+#  - systemd-Makefile.am.patch
 SetupOptions: -q -n %{name}-%{version}/upstream
 ConfigOptions:
   - '--with-gnu-ld'
