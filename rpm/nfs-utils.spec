@@ -24,6 +24,7 @@ BuildRequires:  pkgconfig(devmapper)
 BuildRequires:  pkgconfig(libevent_core)
 BuildRequires:  pkgconfig(libkeyutils)
 BuildRequires:  pkgconfig(libtirpc)
+BuildRequires:  pkgconfig(mount)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  autoconf
 BuildRequires:  automake
