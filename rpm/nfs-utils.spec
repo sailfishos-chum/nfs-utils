@@ -35,7 +35,7 @@ BuildRequires:  libtool
 
 %if "%{?vendor}" == "chum"
 Note that in order to use NFS, you need a kernel that supports it.  
-Some SailfishOS devices do, some don't. The Gemini for example does, the XPeria 10III does not.
+Some SailfishOS devices do, some do not. The Gemini for example does, the XPeria 10III does not.
 
 PackageName: NFS Utils
 PackagerName: nephros
@@ -83,6 +83,7 @@ Requires:   %{name} = %{version}-%{release}
 
 %build
 # >> build pre
+sed -i -e "s@udev_rulesdir = /usr/lib/udev/rules.d/@udev_rulesdir = %{_udevrulesdir}@" tools/nfsrahead/Makefile.am
 ./autogen.sh
 # << build pre
 
@@ -121,6 +122,9 @@ rm -rf %{buildroot}
 %{_unitdir}/*
 %{_systemdgeneratordir}/*
 %{_sharedstatedir}/nfs
+%{_udevrulesdir}/99-nfs.rules
+%{_prefix}/lib/modprobe.d/50-nfs.conf
+%{_libexecdir}/nfsrahead
 # >> files
 # << files
 

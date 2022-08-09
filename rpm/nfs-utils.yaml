@@ -13,7 +13,7 @@ Description: |
 
     %if "%{?vendor}" == "chum"
     Note that in order to use NFS, you need a kernel that supports it.  
-    Some SailfishOS devices do, some don't. The Gemini for example does, the XPeria 10III does not.
+    Some SailfishOS devices do, some do not. The Gemini for example does, the XPeria 10III does not.
 
     PackageName: NFS Utils
     PackagerName: nephros
@@ -64,6 +64,9 @@ Files:
   - '%{_unitdir}/*'
   - '%{_systemdgeneratordir}/*'
   - '%{_sharedstatedir}/nfs'
+  - '%{_udevrulesdir}/99-nfs.rules'
+  - '%{_prefix}/lib/modprobe.d/50-nfs.conf'
+  - '%{_libexecdir}/nfsrahead'
 SubPackages:
   - Name:  doc
     Summary: Documentation files for %{name}
