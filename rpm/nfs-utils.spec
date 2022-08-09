@@ -9,8 +9,8 @@ Name:       nfs-utils
 # << macros
 
 Summary:    NFS client and server daemons
-Version:    2.6.1
-Release:    1
+Version:    2.6.2
+Release:    0
 Group:      System
 License:    GPLv2
 URL:        http://linux-nfs.org/
@@ -33,7 +33,11 @@ BuildRequires:  libtool
 %{summary}.
 
 %if "%{?vendor}" == "chum"
+Note that in order to use NFS, you need a kernel that supports it.  
+Some SailfishOS devices do, some don't. The Gemini for example does, the XPeria 10III does not.
+
 PackageName: NFS Utils
+PackagerName: nephros
 Categories:
  - Network
  - Filesystem
