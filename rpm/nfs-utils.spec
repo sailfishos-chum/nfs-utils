@@ -39,14 +39,14 @@ BuildRequires:  libtool
 Note that in order to use NFS, you need a kernel that supports it.  
 Some SailfishOS devices do, some do not. The Gemini for example does, the XPeria 10III does not.
 
-PackageName: NFS Utils
-PackagerName: nephros
+Title: NFS Utils
+PackagedBy: nephros
 Categories:
  - Network
  - Filesystem
 Custom:
   PackagingRepo: https://github.com/sailfishos-chum/nfs-utils
-Url:
+Links:
   Help: https://wiki.linux-nfs.org/wiki/index.php/Nfsv4_configuration
   Bugtracker: https://bugzilla.linux-nfs.org
 %endif
