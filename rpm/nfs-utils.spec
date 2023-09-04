@@ -124,7 +124,7 @@ rm -rf %{buildroot}
 %{_unitdir}/*
 %{_systemdgeneratordir}/*
 %{_sharedstatedir}/nfs
-%{_udevrulesdir}/99-nfs.rules
+%{_udevrulesdir}/60-nfs.rules
 %{_libexecdir}/nfsrahead
 # >> files
 # << files
