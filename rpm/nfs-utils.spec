@@ -9,7 +9,7 @@ Name:       nfs-utils
 # << macros
 
 Summary:    NFS client and server daemons
-Version:    2.6.2
+Version:    2.6.3
 Release:    0
 Group:      System
 License:    GPLv2
