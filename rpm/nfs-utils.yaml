@@ -67,7 +67,7 @@ Files:
   - '%{_systemdgeneratordir}/*'
   - '%{_sharedstatedir}/nfs'
   - '%{_udevrulesdir}/99-nfs.rules'
-  - '%{_prefix}/lib/modprobe.d/50-nfs.conf'
+  # '%{_prefix}/lib/modprobe.d/50-nfs.conf'
   - '%{_libexecdir}/nfsrahead'
 SubPackages:
   - Name:  doc

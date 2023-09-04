@@ -125,7 +125,6 @@ rm -rf %{buildroot}
 %{_systemdgeneratordir}/*
 %{_sharedstatedir}/nfs
 %{_udevrulesdir}/99-nfs.rules
-%{_prefix}/lib/modprobe.d/50-nfs.conf
 %{_libexecdir}/nfsrahead
 # >> files
 # << files
