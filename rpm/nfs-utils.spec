@@ -27,6 +27,7 @@ BuildRequires:  pkgconfig(libtirpc)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mount)
 BuildRequires:  pkgconfig(systemd)
+BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool

@@ -55,6 +55,7 @@ PkgConfigBR:
   - uuid
   - mount
   - systemd
+  - sqlite3
 
 Files:
   - '%{_sbindir}/*'
