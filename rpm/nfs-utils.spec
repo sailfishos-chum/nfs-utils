@@ -16,6 +16,7 @@ License:    GPLv2
 URL:        http://linux-nfs.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  nfs-utils.yaml
+Patch0:     nfs-utils-2.6.4-includes.patch
 Requires:   rpcbind
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -80,6 +81,8 @@ Requires:   %{name} = %{version}-%{release}
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
+# nfs-utils-2.6.4-includes.patch
+%patch0 -p1
 # >> setup
 # << setup
 
