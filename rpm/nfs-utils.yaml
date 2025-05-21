@@ -53,6 +53,7 @@ PkgConfigBR:
   - libkeyutils
   # libnfsidmap
   - libtirpc
+  - libxml-2.0
   - uuid
   - mount
   - systemd
