@@ -27,7 +27,7 @@ Description: |
       Bugtracker: https://bugzilla.linux-nfs.org
     %endif
 Patches:
-   - nfs-utils-2.6.4-includes.patch
+#   - nfs-utils-2.6.4-includes.patch
 #  # from 2.5.5_rcX: do not hardcode systemd paths:
 #  - systemd-Makefile.am.patch
 SetupOptions: -q -n %{name}-%{version}/upstream
