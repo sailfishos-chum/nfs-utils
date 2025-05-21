@@ -9,7 +9,7 @@ Name:       nfs-utils
 # << macros
 
 Summary:    NFS client and server daemons
-Version:    2.6.4
+Version:    2.7.1
 Release:    0
 Group:      System
 License:    GPLv2
@@ -99,7 +99,7 @@ sed -i -e "s@udev_rulesdir = /usr/lib/udev/rules.d/@udev_rulesdir = %{_udevrules
     --disable-nfsdcltrack \
     --with-systemd=%{_unitdir}
 
-make %{?_smp_mflags}
+%make_build
 
 # >> build post
 # << build post
