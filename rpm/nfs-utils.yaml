@@ -36,6 +36,7 @@ ConfigOptions:
   - '--disable-gss'
   - '--disable-nfsdcld'
   - '--disable-nfsdcltrack'
+  - '--with-rpcgen=internal'
   # '--disable-nfsv4'
   # '--disable-nfsv41'
   - '--with-systemd=%{_unitdir}'
