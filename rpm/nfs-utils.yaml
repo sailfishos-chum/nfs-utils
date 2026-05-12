@@ -37,8 +37,8 @@ ConfigOptions:
   - '--disable-nfsdcld'
   - '--disable-nfsdcltrack'
   - '--with-rpcgen=internal'
-  # '--disable-nfsv4'
-  # '--disable-nfsv41'
+  # '--disable-nfsv4'  # no kerberos...
+  # '--disable-nfsv41' # no kerberos...
   - '--with-systemd=%{_unitdir}'
   - '--enable-year2038'
 
@@ -51,11 +51,13 @@ PkgBR:
 PkgConfigBR:
   - blkid
   - devmapper
+  - libnl-3.0
   - libevent_core
   - libkeyutils
   # libnfsidmap
   - libtirpc
   - libxml-2.0
+  - readline
   - uuid
   - mount
   - systemd

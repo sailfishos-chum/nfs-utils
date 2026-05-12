@@ -21,10 +21,12 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(blkid)
 BuildRequires:  pkgconfig(devmapper)
+BuildRequires:  pkgconfig(libnl-3.0)
 BuildRequires:  pkgconfig(libevent_core)
 BuildRequires:  pkgconfig(libkeyutils)
 BuildRequires:  pkgconfig(libtirpc)
 BuildRequires:  pkgconfig(libxml-2.0)
+BuildRequires:  pkgconfig(readline)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mount)
 BuildRequires:  pkgconfig(systemd)
