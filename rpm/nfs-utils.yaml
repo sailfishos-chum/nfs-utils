@@ -40,6 +40,7 @@ ConfigOptions:
   # '--disable-nfsv4'
   # '--disable-nfsv41'
   - '--with-systemd=%{_unitdir}'
+  - '--enable-year2038'
 
 Requires:
   - rpcbind
