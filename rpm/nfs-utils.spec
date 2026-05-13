@@ -99,7 +99,8 @@ sed -i -e "s@udev_rulesdir = /usr/lib/udev/rules.d/@udev_rulesdir = %{_udevrules
     --disable-nfsdcltrack \
     --with-rpcgen=internal \
     --with-systemd=%{_unitdir} \
-    --enable-year2038
+    --enable-year2038 \
+    --enable-libmount-mount
 
 %make_build
 

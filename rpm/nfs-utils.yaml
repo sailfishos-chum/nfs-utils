@@ -41,6 +41,7 @@ ConfigOptions:
   # '--disable-nfsv41' # no kerberos...
   - '--with-systemd=%{_unitdir}'
   - '--enable-year2038'
+  - '--enable-libmount-mount'
 
 Requires:
   - rpcbind
