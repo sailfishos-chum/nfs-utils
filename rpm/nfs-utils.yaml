@@ -3,11 +3,14 @@ Summary: NFS client and server daemons
 Version: 2.9.1
 Release: 0
 Group: System
+URL: http://linux-nfs.org/
+SCM: http://git.linux-nfs.org/projects/steved/nfs-utils.git
 License: GPLv2
 Sources:
     - '%{name}-%{version}.tar.bz2'
-URL: http://linux-nfs.org/
-SCM: http://git.linux-nfs.org/projects/steved/nfs-utils.git
+Patches: 
+    # drop this in v2.9.2 or later
+    - 0a1ce8797.patch
 Description: |
     %{summary}.
 
