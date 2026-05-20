@@ -104,6 +104,7 @@ sed -i -e "s@udev_rulesdir = /usr/lib/udev/rules.d/@udev_rulesdir = %{_udevrules
     --disable-gss \
     --disable-nfsdcld \
     --disable-nfsdcltrack \
+    --disable-nfsdctl \
     --with-systemd=%{_unitdir} \
     --enable-year2038 \
     --enable-libmount-mount \

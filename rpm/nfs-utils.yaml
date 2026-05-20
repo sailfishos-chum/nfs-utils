@@ -35,6 +35,7 @@ ConfigOptions:
   - '--disable-gss'
   - '--disable-nfsdcld'
   - '--disable-nfsdcltrack'
+  - '--disable-nfsdctl'
   # '--disable-nfsv4'  # no kerberos...
   # '--disable-nfsv41' # no kerberos...
   - '--with-systemd=%{_unitdir}'
