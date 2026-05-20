@@ -26,17 +26,12 @@ Description: |
       Help: https://wiki.linux-nfs.org/wiki/index.php/Nfsv4_configuration
       Bugtracker: https://bugzilla.linux-nfs.org
     %endif
-Patches:
-#   - nfs-utils-2.6.4-includes.patch
-#  # from 2.5.5_rcX: do not hardcode systemd paths:
-#  - systemd-Makefile.am.patch
 SetupOptions: -q -n %{name}-%{version}/upstream
 ConfigOptions:
   - '--with-gnu-ld'
   - '--disable-gss'
   - '--disable-nfsdcld'
   - '--disable-nfsdcltrack'
-  - '--with-rpcgen=internal'
   # '--disable-nfsv4'  # no kerberos...
   # '--disable-nfsv41' # no kerberos...
   - '--with-systemd=%{_unitdir}'
@@ -49,6 +44,7 @@ PkgBR:
   - autoconf
   - automake
   - libtool
+  - ( glibc-common < 2.41 or rpcsvc-proto )
 PkgConfigBR:
   - blkid
   - devmapper

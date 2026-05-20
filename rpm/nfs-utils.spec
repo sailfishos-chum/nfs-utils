@@ -34,6 +34,7 @@ BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
+BuildRequires:  ( glibc-common < 2.41 or rpcsvc-proto )
 
 %description
 %{summary}.
@@ -73,7 +74,7 @@ Requires:   %{name} = %{version}-%{release}
 
 # >> macros2
 # 4.x has a macro defined, 3.4 uses /usr/lib/systemd, lower uses /lib/systemd
-%if %{sailfishos_version} <= 30400
+%if 0%{?sailfishos_version} <= 30400
 %if %{undefined _systemdgeneratordir}
 %define _systemdgeneratordir %{_unitdir}/../system-generators
 %endif
@@ -97,7 +98,6 @@ sed -i -e "s@udev_rulesdir = /usr/lib/udev/rules.d/@udev_rulesdir = %{_udevrules
     --disable-gss \
     --disable-nfsdcld \
     --disable-nfsdcltrack \
-    --with-rpcgen=internal \
     --with-systemd=%{_unitdir} \
     --enable-year2038 \
     --enable-libmount-mount
