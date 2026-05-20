@@ -37,6 +37,9 @@ ConfigOptions:
   - '--with-systemd=%{_unitdir}'
   - '--enable-year2038'
   - '--enable-libmount-mount'
+  # Avoid call to broken libreadline pkg-config file:
+  - 'LIBREADLINE_LIBS="-L%{_libdir} -lreadline"'
+  - 'LIBREADLINE_CFLAGS="-I%{_includedir}"'
 
 Requires:
   - rpcbind

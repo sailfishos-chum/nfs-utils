@@ -89,6 +89,9 @@ Requires:   %{name} = %{version}-%{release}
 
 %build
 # >> build pre
+# Avoid call to broken libreadline pkg-config file:
+export LIBREADLINE_LIBS="-lreadline"
+export LIBREADLINE_CFLAGS=""
 sed -i -e "s@udev_rulesdir = /usr/lib/udev/rules.d/@udev_rulesdir = %{_udevrulesdir}@" tools/nfsrahead/Makefile.am
 ./autogen.sh
 # << build pre
@@ -100,7 +103,9 @@ sed -i -e "s@udev_rulesdir = /usr/lib/udev/rules.d/@udev_rulesdir = %{_udevrules
     --disable-nfsdcltrack \
     --with-systemd=%{_unitdir} \
     --enable-year2038 \
-    --enable-libmount-mount
+    --enable-libmount-mount \
+    LIBREADLINE_LIBS="-L%{_libdir} -lreadline" \
+    LIBREADLINE_CFLAGS="-I%{_includedir}"
 
 %make_build
 
